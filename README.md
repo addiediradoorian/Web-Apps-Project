@@ -1,4 +1,9 @@
 # Web-Apps-Project
-hey
 
-whats up friends
+The College Vagabond
+Addie Diradoorian Shukra Sabnis Christine Kenyon
+
+4/11 Comments
+Project Docs - first cut is fine.
+XML&RSS feeds - file named incorrectly, worked when I renamed it.
+
