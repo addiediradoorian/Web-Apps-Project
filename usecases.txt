@@ -1,0 +1,45 @@
+1. User signs up
+	Actor: User
+	Precondition: User has not already signed up
+	Postcondition: User is inserted into the signup table
+	Queries: select * from where firstname like ‘joe’;
+	insert into user (ID, FirstName, LastName, Email, Password1, Password2, College, Major) values (1, ‘Shannon’, ‘Specht’, ‘spechts@bc.edu’, ’dEmonm1sty’, ‘dEmonm1sty’, ’Boston College’, ‘Computer Science);
+  Mockup: see signup.jpg
+  
+2. User Logs In
+	Actor: User
+	Precondition: User has already created account, uses email and password to sign in
+	Postcondition: User is redirected to page to view cities
+	Queries: SELECT password1 FROM signup where email = ‘spechts@bc.edu’;
+  Mockup: see login.jpg
+  
+3. User Contacts Admin
+	Actor: User
+	Precondition: User has already logged in
+	Postcondition: User sees message saying “We received your message and will contact you soon!”
+	Queries: select * into contacts where firstname like ‘joe’;
+	insert into contactus (ID, FirstName, LastName, Email, Comments) values (1, ‘Addie’, ‘Diradoorian’, ‘diradoor@bc.edu’, ‘Love this site!’);
+  Mockup: see contactus.jpg
+  
+4. User Creates Entry
+	Actor: User
+	Precondition: User has already logged in
+	Postcondition: User
+	Queries: insert into entries (ID, City, EatSleepOrSee, EstablishmentName, Stars, Comments) values (5, ‘London’, ‘Eat’, ‘Sketch’, 5, ‘Great place!’);
+  Mockup: see createentry.jpg
+  
+5. User Rates Existing Entry
+	Actor: User
+	Precondition: User has already logged in, another user has already submitted an entry for a specific restaurant/hotel/thing to see
+	Postcondition: Entry table updates and averages star rating
+	Queries: UPDATE entry WHERE EstablishmentName = ‘Sketch’
+	AVG(Stars)
+	SELECT * FROM entry WHERE City = ‘London’
+  Mockup: see rateentry.jpg
+  
+6. Admin Sends Mail
+	Actor: Admin
+	Precondition: Admin logs in
+	Postcondition: Admin gets message that mail was successfully sent. Users receive email about news, promotions, etc.
+	Queries: mail($to, $subject, $body, $headers)
+	Mockup: see sendmail.jpg
