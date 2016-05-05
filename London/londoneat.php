@@ -1,39 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Eat Sleep See</title>
+<title>London | Eat</title>
 <meta charset="utf-8">
+<link rel="icon" href="images/favicon.ico">
+<link rel="shortcut icon" href="images/favicon.ico">
 <link rel="stylesheet" href="css/style.css">
-<link rel="stylesheet" href="css/slider.css">
 <script src="js/jquery.js"></script>
 <script src="js/jquery-migrate-1.1.1.js"></script>
 <script src="js/superfish.js"></script>
-<script src="js/sForm.js"></script>
-<script src="js/jquery.jqtransform.js"></script>
 <script src="js/jquery.equalheights.js"></script>
 <script src="js/jquery.easing.1.3.js"></script>
-<script src="js/tms-0.4.1.js"></script>
-<script src="js/jquery-ui-1.10.3.custom.min.js"></script>
 <script src="js/jquery.ui.totop.js"></script>
 <script>
 $(window).load(function () {
-    $('.slider')._TMS({
-        show: 0,
-        pauseOnHover: false,
-        prevBu: '.prev',
-        nextBu: '.next',
-        playBu: false,
-        duration: 800,
-        preset: 'random',
-        pagination: false, //'.pagination',true,'<ul></ul>'
-        pagNums: false,
-        slideshow: 8000,
-        numStatus: false,
-        banners: true,
-        waitBannerAnimation: false,
-        progressBar: false
-    });
-    $("#tabs").tabs();
     $().UItoTop({
         easingType: 'easeOutQuart'
     });
@@ -43,10 +23,12 @@ $(window).load(function () {
 <script src="js/html5shiv.js"></script>
 <link rel="stylesheet" media="screen" href="css/ie.css">
 <![endif]-->
-<div class="sign"><a href="signup/signup.php">Sign up</a> | <a href="login.php">Log in</a></div>
+<div class="out"><a href="logout.php">Log Out</a></div>
+<div class="sign"><a href="http://cscilab.bc.edu/~diradoor/final/newentry.php">Submit a Review!</a></div>
 </head>
 
-<body class="page1">
+
+<body>
 <header>
   <div class="container_12">
     <div class="grid_12">
@@ -56,40 +38,40 @@ $(window).load(function () {
     <div class="menu_block">
       <nav>
         <ul class="sf-menu">
-          <li class="current"><a href="home.html">Home</a></li>
+          <li class="current"><a href="http://cscilab.bc.edu/~diradoor/final/home.html">Home</a></li>
           <li class="with_ul"><a>London</a>
             <ul>
-              <li><a href="London/londoneat.php">Eat</a></li>
-              <li><a href="London/londonsleep.php">Sleep</a></li>
-              <li><a href="London/londonsee.php">See</a></li>
+              <li><a href="http://cscilab.bc.edu/~diradoor/final/londoneat.php">Eat</a></li>
+              <li><a href="http://cscilab.bc.edu/~diradoor/final/londonsleep.php">Sleep</a></li>
+              <li><a href="http://cscilab.bc.edu/~diradoor/final/londonsee.php"">See</a></li>
             </ul>
           </li>
           <li class="with_ul"><a>Paris</a>
             <ul>
-              <li><a href="Paris/pariseat.php">Eat</a></li>
-              <li><a href="Paris/parissleep.php">Sleep</a></li>
-              <li><a href="Paris/parissee.php">See</a></li>
+              <li><a href="http://cscilab.bc.edu/~diradoor/final/pariseat.php">Eat</a></li>
+              <li><a href="http://cscilab.bc.edu/~diradoor/final/parissleep.php">Sleep</a></li>
+              <li><a href="http://cscilab.bc.edu/~diradoor/final/parissee.php">See</a></li>
             </ul>
           </li>          
 	  <li class="with_ul"><a>Rome</a>
             <ul>
-              <li><a href="Rome/romeeat.php">Eat</a></li>
-              <li><a href="Rome/romesleep.php">Sleep</a></li>
-              <li><a href="Rome/romesee.php">See</a></li>
+              <li><a href="http://cscilab.bc.edu/~diradoor/final/romeeat.php">Eat</a></li>
+              <li><a href="http://cscilab.bc.edu/~diradoor/final/romesleep.php">Sleep</a></li>
+              <li><a href="http://cscilab.bc.edu/~diradoor/final/romesee.php">See</a></li>
             </ul>
           </li>
           <li class="with_ul"><a>Sydney</a>
             <ul>
-              <li><a href="Sydney/sydneyeat.php">Eat</a></li>
-              <li><a href="Sydney/sydneysleep.php">Sleep</a></li>
-              <li><a href="Sydney/sydneysee.php">See</a></li>
+              <li><a href="http://cscilab.bc.edu/~diradoor/final/sydneyeat.php">Eat</a></li>
+              <li><a href="http://cscilab.bc.edu/~diradoor/final/sydneysleep.php">Sleep</a></li>
+              <li><a href="http://cscilab.bc.edu/~diradoor/final/sydneysee.php">See</a></li>
             </ul>
           </li>
           <li class="with_ul"><a>Tokyo</a>
             <ul>
-              <li><a href="Tokyo/tokyoeat.php">Eat</a></li>
-              <li><a href="Tokyo/tokyosleep.php">Sleep</a></li>
-              <li><a href="Tokyo/tokyosee.php">See</a></li>
+              <li><a href="http://cscilab.bc.edu/~diradoor/final/tokyoeat.php">Eat</a></li>
+              <li><a href="http://cscilab.bc.edu/~diradoor/final/tokyosleep.php">Sleep</a></li>
+              <li><a href="http://cscilab.bc.edu/~diradoor/final/tokyosee.php">See</a></li>
             </ul>
           </li>
         </ul>
@@ -98,15 +80,17 @@ $(window).load(function () {
     </div>
     <div class="clear"></div>
   </div>
+
 </header>
 
+
+
 <div class="main">
-<div class="content">
-	<div class="container_12">
-      		<div class="grid_12">
+  <div class="content">
+ <div class="container_12">
 
-
-
+<div class="table">
+<table><tr><th>Eat/Sleep/See</th><th>City</th><th>Place Name</th><th>Stars</th><th>Comments</th></tr>
 
 <?php
 show_london_eat();
@@ -147,26 +131,32 @@ function show_london_eat() {
 if ($result->num_rows > 0) {
      // output data of each row
      while($row = $result->fetch_assoc()) {
-         echo "<table>" . "<tr>" . "<th>Eat / Sleep / See</th>" . "<th> City</th>" . "<th> Name</th>"
-         . "<th> Stars</th>" . "<th> Comments</th>" . "</tr>";
-         echo "<br>";
+	
          echo "<tr>" . "<td>" . $row["EatSleeporSee"] . " " . "</td>" . "<td>" . $row["City"]
           . "</td>" . " " . "<td>" . $row["EstName"] . " " . "</td>" . "<td>" . $row["Stars"] 
-          . " " . "</td>" . "<td>" . $row["Comments"] . "</td>" ."</tr>" . "</table>";
+          . " " . "</td>" . "<td>" . $row["Comments"] . "</td>" ."</tr>";
+	echo "<Br>";
      }
 } else {
      echo "0 results";
 }
 }
 ?>
+</table>
+</div>
 
 
 
-  <div class="bottom_block">
-      <div class="clear"></div> 
-  </div>
+      <div class="grid_9">
+
+
+</div>
 </div>
 </div>
 </div>
 </body>
 </html>
+
+
+
+
