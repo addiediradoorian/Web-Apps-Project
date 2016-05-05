@@ -1,3 +1,24 @@
+<?php
+function connect_to_db( $diradoor ){
+	$dbc = @mysqli_connect( "localhost", "diradoor", "nXze83Ks", $diradoor ) or
+			die( "Connect failed: ". mysqli_connect_error() );
+	return $dbc;
+}
+
+function disconnect_from_db( $dbc, $result ){
+	mysqli_free_result( $result ); //mysqli_free_result( $result );
+	mysqli_close( $dbc );
+}
+
+
+function perform_query( $dbc, $query ){
+	//echo $query;
+	$result = mysqli_query($dbc, $query) or 
+			die( "bad query".mysqli_error( $dbc ) );
+	return $result;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,8 +32,7 @@
 <body>
 <?php
 display_form();
-if (isset($_GET['submit'])) /* && isset($_GET['firstname']) && isset($_GET['lastname'])
-&& isset($_GET['email']) && isset($_GET['password1']) && isset($_GET['password2']) */
+if (isset($_GET['submit']))
 	handle_form();
 
 ?>
@@ -37,29 +57,6 @@ function display_form(){
 <?php
 }
 
-//include('dbconn.php');
-
-
-function connect_to_db( $diradoor ){
-	$dbc = @mysqli_connect( "localhost", "diradoor", "nXze83Ks", $diradoor ) or
-			die( "Connect failed: ". mysqli_connect_error() );
-	return $dbc;
-}
-
-function disconnect_from_db( $dbc, $result ){
-	mysqli_free_result( $result ); //mysqli_free_result( $result );
-	mysqli_close( $dbc );
-}
-
-
-function perform_query( $dbc, $query ){
-	//echo $query;
-	$result = mysqli_query($dbc, $query) or 
-			die( "bad query".mysqli_error( $dbc ) );
-	return $result;
-}
-
-
 function handle_form(){
 	$dbc = connect_to_db( "diradoor" );	
 	$firstnamevalue = isset($_GET['firstname']) ? $_GET['firstname'] : "";
@@ -74,32 +71,12 @@ function handle_form(){
 		'$encoded2')"; 
 	$result = perform_query( $dbc, $query );
 
-
-	if ($dbc->query($query) === TRUE) { // && ($passwordvalue1 === $passwordvalue2)
-		//if ($passwordvalue1 == $passwordvalue2) { 
+	if ($dbc->query($query) === TRUE) {
 			echo "Congrats you've successfully signed up!";
-		//} else {
-		//echo "Passwords don't match!";
-		//add image linked to home page to start exploring
+			echo "  Click <a href='home.html'>here</a> to start exploring!";
+
 	} else {
 		echo "Error: " . $query . "<br>" . $dbc->error;
 	}
 	//disconnect_from_db( $dbc, $result );
 }
-
-
-
-/*
-function test_variable ( $var ) {
-	echo "var_dump ();";
-	var_dump( $var );
-	
-	echo "var_dump( empty() );";
-	var_dump( empty( $var ) );
-	
-	echo "<hr>";
-}
-*/	
-	
-//password should be at least 6 characters, pw1 should match pw2
-//question: why is it entering everything twice in the query?
