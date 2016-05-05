@@ -22,14 +22,14 @@ function perform_query( $dbc, $query ){
 //set cookies
 
 $debug = 1;
-if ( ! isset( $_POST['email'] ) or  
-		! isset( $_POST['password'] ) or 
-		( 0 == checklogin( $_POST['email'], $_POST['password'] ) ) ) {
+if ( ! isset( $_POST['name'] ) or  
+		! isset( $_POST['pass'] ) or 
+		( 0 == validate_user( $_POST['name'], $_POST['pass'] ) ) ) {
 	//echo "not logged in!";
   //header("Location: home.html");
  
  } else { 
-	setcookie('loginCookieUser', $_POST['email']);
+	setcookie('loginCookieUser', $_POST['name']);
   	//header("Location: home.html");
 }
 
