@@ -51,8 +51,8 @@ function handleForm( $op ) {
 }	
 function validate_user( $name, $pw ){
 	$encode = sha1( $pw );
-	$query = "SELECT * from signup WHERE email='diradoor@bc.edu' 
-	AND password1='608e2b444cbcf327a3cd000571cec2'";
+	$query = "SELECT * from signup WHERE email='$name' 
+	AND password1='$encode'";
 	$dbc = connect_to_db( "diradoor" );
 	$result = perform_query( $dbc, $query );
 	$row = mysqli_fetch_array( $result, MYSQLI_ASSOC );
