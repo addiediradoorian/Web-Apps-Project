@@ -3,6 +3,8 @@
 <head>
 <title>Eat Sleep See</title>
 <meta charset="utf-8">
+<link rel="icon" href="images/favicon.ico">
+<link rel="shortcut icon" href="images/favicon.ico">
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/slider.css">
 <script src="js/jquery.js"></script>
@@ -43,6 +45,8 @@ $(window).load(function () {
 <script src="js/html5shiv.js"></script>
 <link rel="stylesheet" media="screen" href="css/ie.css">
 <![endif]-->
+<div class="out"><a href="logout.php">Log Out</a></div>
+<div class="sign"><a href="http://cscilab.bc.edu/~diradoor/final/newentry.php">Submit a Review!</a></div>
 </head>
 
 <body class="page1">
@@ -58,37 +62,37 @@ $(window).load(function () {
           <li class="current"><a href="home.html">Home</a></li>
           <li class="with_ul"><a>London</a>
             <ul>
-              <li><a href="London/londoneat.php">Eat</a></li>
-              <li><a href="London/londonsleep.php">Sleep</a></li>
-              <li><a href="London/londonsee.php">See</a></li>
+              <li><a href="londoneat.php">Eat</a></li>
+              <li><a href="londonsleep.php">Sleep</a></li>
+              <li><a href="londonsee.php">See</a></li>
             </ul>
           </li>
           <li class="with_ul"><a>Paris</a>
             <ul>
-              <li><a href="Paris/pariseat.php">Eat</a></li>
-              <li><a href="Paris/parissleep.php">Sleep</a></li>
-              <li><a href="Paris/parissee.php">See</a></li>
+              <li><a href="pariseat.php">Eat</a></li>
+              <li><a href="parissleep.php">Sleep</a></li>
+              <li><a href="parissee.php">See</a></li>
             </ul>
           </li>          
 	  <li class="with_ul"><a>Rome</a>
             <ul>
-              <li><a href="Rome/romeeat.php">Eat</a></li>
-              <li><a href="Rome/romesleep.php">Sleep</a></li>
-              <li><a href="Rome/romesee.php">See</a></li>
+              <li><a href="romeeat.php">Eat</a></li>
+              <li><a href="romesleep.php">Sleep</a></li>
+              <li><a href="romesee.php">See</a></li>
             </ul>
           </li>
           <li class="with_ul"><a>Sydney</a>
             <ul>
-              <li><a href="Sydney/sydneyeat.php">Eat</a></li>
-              <li><a href="Sydney/sydneysleep.php">Sleep</a></li>
-              <li><a href="Sydney/sydneysee.php">See</a></li>
+              <li><a href="sydneyeat.php">Eat</a></li>
+              <li><a href="sydneysleep.php">Sleep</a></li>
+              <li><a href="sydneysee.php">See</a></li>
             </ul>
           </li>
           <li class="with_ul"><a>Tokyo</a>
             <ul>
-              <li><a href="Tokyo/tokyoeat.php">Eat</a></li>
-              <li><a href="Tokyo/tokyosleep.php">Sleep</a></li>
-              <li><a href="Tokyo/tokyosee.php">See</a></li>
+              <li><a href="tokyoeat.php">Eat</a></li>
+              <li><a href="tokyosleep.php">Sleep</a></li>
+              <li><a href="tokyosee.php">See</a></li>
             </ul>
           </li>
         </ul>
@@ -132,34 +136,48 @@ $(window).load(function () {
       <div class="boxes">
         <div class="grid_4">
           <figure>
-            <div><img src="images/page1_img1.jpg" alt=""></div>
+            <div><img src="images/page1_img1.jpg" alt="London" height="337" width="337"></div>
             <figcaption>
               <h3>London</h3>
-              Things about place</figcaption>
+              One of the world's most visited cities, London has something for everyone: from history and culture to fine food and good times.
+	     <br><br>
+		<ul>
+              	<li><a href="londoneat.php">Eat</a></li>
+             	<li><a href="londonsleep.php">Sleep</a></li>
+              	<li><a href="londonsee.php">See</a></li>
+            	</ul>
+	    </figcaption>
           </figure>
         </div>
         <div class="grid_4">
           <figure>
-            <div><img src="images/page1_img2.jpg" alt=""></div>
+            <div><img src="images/page1_img2.jpg" alt="Paris" height="337" width="337"></div>
             <figcaption>
               <h3>Paris</h3>
-              STuff</figcaption>
+                The capital and most populous city of France.  Paris is a global center for art, fashion, gastronomy and culture.
+		<br><br>
+             <ul>
+              <li><a href="pariseat.php">Eat</a></li>
+              <li><a href="parissleep.php">Sleep</a></li>
+              <li><a href="parissee.php">See</a></li>
+             </ul>
+	    </figcaption>
           </figure>
         </div>
         <div class="grid_4">
           <figure>
-            <div><img src="images/page1_img3.jpg" alt=""></div>
+            <div><img src="images/page1_img3.jpg" alt="Rome" height="337" width="337"></div>
             <figcaption>
               <h3>Rome</h3>
-              stuff  </figcaption>
+               A sprawling, cosmopolitan city with nearly 3,000 years of globally influential art, architecture and culture on display.  
+	 <br><br>
+	    <ul>
+              <li><a href="romeeat.php">Eat</a></li>
+              <li><a href="romesleep.php">Sleep</a></li>
+              <li><a href="romesee.php">See</a></li>
+            </ul>
+	</figcaption>
           </figure><br>
-
-
-
-
-
- <div class="signbottom"><h3><a href="signup/signup.php">Sign up</a> | <a href="login/login.php">Log in</a></h3></div>
-
         </div>
         <div class="clear"></div>
       </div>
@@ -173,6 +191,12 @@ $(window).load(function () {
 
   <div class="bottom_block">
       <div class="clear"></div> 
+	<div class="grid_2">
+        <h4><a href="contactus.php">Contact Us</a></h4>
+        </div>
+      <div class="clear"></div>
+
+
   </div>
 </div>
 <footer>
