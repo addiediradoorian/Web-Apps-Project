@@ -63,6 +63,7 @@ function display_login_form(){
 		<input type="hidden" name="op" value="validate" />
 		<input type="submit" name="validate" value="Log in!">
 		<br>
+		<a href="http://cscilab.bc.edu/~diradoor/final/fpassword/forgot_password.php">Forgot password?</a>
 	</form>
 	</fieldset>
 
