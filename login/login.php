@@ -1,3 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Eat Sleep See | Login</title>
+<meta charset="utf-8">
+<link rel="icon" href="images/favicon.ico">
+<link rel="shortcut icon" href="images/favicon.ico">
+<link rel="stylesheet" href="css/style.css">
+<script src="js/jquery.js"></script>
+<script src="js/jquery-migrate-1.1.1.js"></script>
+<script src="js/superfish.js"></script>
+<script src="js/jquery.equalheights.js"></script>
+<script src="js/jquery.easing.1.3.js"></script>
+<script src="js/jquery.ui.totop.js"></script>
+<script>
+$(window).load(function () {
+    $().UItoTop({
+        easingType: 'easeOutQuart'
+    });
+});
+</script>
+<!--[if lt IE 9]>
+<script src="js/html5shiv.js"></script>
+<link rel="stylesheet" media="screen" href="css/ie.css">
+<![endif]-->
+<div class="sign"><a href="newentry.php">Submit a Review!</div></a>
+</head>
+
+
+<body>
+<header>
+  <div class="container_12">
+    <div class="grid_12">
+      <h1><a href="home.html"><img src="images/logo.png" alt="Eat Sleep See"></a></h1>
+      <div class="clear"></div>
+    </div>
+    <div class="menu_block">
+      <nav>
+        <ul class="sf-menu">
+          <li class="current"><a href="home.html">Home</a></li>
+          <li class="with_ul"><a>London</a>
+            <ul>
+              <li><a href="londoneat.php">Eat</a></li>
+              <li><a href="londonsleep.php">Sleep</a></li>
+              <li><a href="londonsee.php">See</a></li>
+            </ul>
+          </li>
+          <li class="with_ul"><a>Paris</a>
+            <ul>
+              <li><a href="pariseat.php">Eat</a></li>
+              <li><a href="parissleep.php">Sleep</a></li>
+              <li><a href="parissee.php">See</a></li>
+            </ul>
+          </li>          
+	  <li class="with_ul"><a>Rome</a>
+            <ul>
+              <li><a href="romeeat.php">Eat</a></li>
+              <li><a href="romesleep.php">Sleep</a></li>
+              <li><a href="romesee.php">See</a></li>
+            </ul>
+          </li>
+          <li class="with_ul"><a>Sydney</a>
+            <ul>
+              <li><a href="sydneyeat.php">Eat</a></li>
+              <li><a href="sydneysleep.php">Sleep</a></li>
+              <li><a href="sydneysee.php">See</a></li>
+            </ul>
+          </li>
+          <li class="with_ul"><a>Tokyo</a>
+            <ul>
+              <li><a href="tokyoeat.php">Eat</a></li>
+              <li><a href="tokyosleep.php">Sleep</a></li>
+              <li><a href="tokyosee.php">See</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <div class="clear"></div>
+    </div>
+    <div class="clear"></div>
+  </div>
+
+</header>
+
+
+
+<div class="main">
+  <div class="content">
+ <div class="container_12">
+
+<?php
+display_login_form();
+
+?> 
+
+</div>
+
+
+
+      <div class="grid_9">
+
+
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>
+
+
 <?php
 function connect_to_db( $diradoor ){
 	$dbc = @mysqli_connect( "localhost", "diradoor", "nXze83Ks", $diradoor ) or
@@ -17,44 +127,12 @@ function perform_query( $dbc, $query ){
 	return $result;
 }
 ?>
-<html>
-<head>
-	<meta charset="UTF-8" />
-	<title>Login</title>
-	<h1>Eat Sleep See</h1>
-	<style type = "text/css">		  
-			body {font-family: Avenir;}
-	</style>
-</head>
-<body>
+
 <?php
-display_login_form();
-/*if (isset( $_POST['op'] ))
-	handleForm( $_POST['op'] );
-	display_login_form();
-*/
-?> 
-</body>
-</html>
-<?php
-/*
-function handleForm( $op ) {
-		$entered_name = $_POST['name'];	
-		$entered_passwd = $_POST['pass'];
-		
-		switch ( $op ) {
-		case "validate":
-			validate_user( $entered_name, $entered_passwd );	
-			break;
-		default:
-			die( "Invalid operation" );
-	}	
-}
-*/
+
 
 function display_login_form(){
 ?>
-	<fieldset>
 	<form method="post" name="loginform" action="logincookie.php">
 		Email: <input type="text" name="name">
 		<br>
@@ -63,30 +141,11 @@ function display_login_form(){
 		<input type="hidden" name="op" value="validate" />
 		<input type="submit" name="validate" value="Log in!">
 		<br>
-		<a href="http://cscilab.bc.edu/~diradoor/final/fpassword/forgot_password.php">Forgot password?</a>
+		<a href="forgot_password.php">Forgot password?</a>
+		<br>
 	</form>
-	</fieldset>
+
 
 <?php
 }
-
-/*
-function validate_user( $name, $pw ){
-	$encode = sha1( $pw );
-	$query = "SELECT * from signup WHERE email='diradoor@bc.edu' 
-	AND password1='608e2b444cbcf327a3cd000571cec2'";
-	$dbc = connect_to_db( "diradoor" );
-	$result = perform_query( $dbc, $query );
-	$row = mysqli_fetch_array( $result, MYSQLI_ASSOC );
-	//$row = $result->fetch_assoc();
-	//echo "<pre>";
-	//print_r($row);
-	//echo "</pre>";
-	if ( mysqli_num_rows( $result ) == 0) 
-		echo "<br>Validate Failure - $query"; 
-	 else 
-	 	//header("Location: home.html");
-		echo "<br>Validate Success - $query";
-	
-}
-*/
+?>
