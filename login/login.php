@@ -1,5 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
+function connect_to_db( $diradoor ){
+	$dbc = @mysqli_connect( "localhost", "diradoor", "nXze83Ks", $diradoor ) or
+			die( "Connect failed: ". mysqli_connect_error() );
+	return $dbc;
+}
+
+function disconnect_from_db( $dbc, $result ){
+	mysqli_free_result( $result ); //mysqli_free_result( $result );
+	mysqli_close( $dbc );
+}
+
+function perform_query( $dbc, $query ){
+	//echo $query;
+	$result = mysqli_query($dbc, $query) or 
+			die( "bad query".mysqli_error( $dbc ) );
+	return $result;
+}
+?>
+<html>
 <head>
 	<meta charset="UTF-8" />
 	<title>Login</title>
@@ -9,36 +27,65 @@
 	</style>
 </head>
 <body>
-
 <?php
-$email = isset( $_POST['email'] ) ? $_POST['email'] : "";
-$password = isset( $_POST['password'] ) ? $_POST['password'] : "";
-display_login_form($email, $password);
+display_login_form();
+/*if (isset( $_POST['op'] ))
+	handleForm( $_POST['op'] );
+	display_login_form();
+*/
+?> 
+</body>
+</html>
+<?php
+/*
+function handleForm( $op ) {
+		$entered_name = $_POST['name'];	
+		$entered_passwd = $_POST['pass'];
+		
+		switch ( $op ) {
+		case "validate":
+			validate_user( $entered_name, $entered_passwd );	
+			break;
+		default:
+			die( "Invalid operation" );
+	}	
+}
+*/
+
 function display_login_form(){
 ?>
-	<form method=POST action="logincookie.php">
-		Email: <input type="text" name="email">
+	<fieldset>
+	<form method="post" name="loginform" action="logincookie.php">
+		Email: <input type="text" name="name">
 		<br>
-		Password: <input type="password" name="password">
+		Password: <input type="password" name="pass">
 		<br>
-		<input type="submit" name="submit" value="Log in!">
-		<input type="hidden" name="submitted" value="true">
+		<input type="hidden" name="op" value="validate" />
+		<input type="submit" name="validate" value="Log in!">
+		<br>
 	</form>
+	</fieldset>
+
 <?php
 }
-//include('dbconn.php');
-function connect_to_db( $diradoor ){
-	$dbc = @mysqli_connect( "localhost", "diradoor", "nXze83Ks", $diradoor ) or
-			die( "Connect failed: ". mysqli_connect_error() );
-	return $dbc;
+
+/*
+function validate_user( $name, $pw ){
+	$encode = sha1( $pw );
+	$query = "SELECT * from signup WHERE email='diradoor@bc.edu' 
+	AND password1='608e2b444cbcf327a3cd000571cec2'";
+	$dbc = connect_to_db( "diradoor" );
+	$result = perform_query( $dbc, $query );
+	$row = mysqli_fetch_array( $result, MYSQLI_ASSOC );
+	//$row = $result->fetch_assoc();
+	//echo "<pre>";
+	//print_r($row);
+	//echo "</pre>";
+	if ( mysqli_num_rows( $result ) == 0) 
+		echo "<br>Validate Failure - $query"; 
+	 else 
+	 	//header("Location: home.html");
+		echo "<br>Validate Success - $query";
+	
 }
-function disconnect_from_db( $dbc, $result ){
-	mysqli_free_result( $result ); //mysqli_free_result( $result );
-	mysqli_close( $dbc );
-}
-function perform_query( $dbc, $query ){
-	//echo $query;
-	$result = mysqli_query($dbc, $query) or 
-			die( "bad query".mysqli_error( $dbc ) );
-	return $result;
-}
+*/
