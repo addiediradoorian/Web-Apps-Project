@@ -31,9 +31,12 @@ function perform_query( $dbc, $query ){
 </head>
 <body>
 <?php
+if (isset($_POST['submit']) && isset($_POST['firstname']) && isset($_POST['lastname'])
+&& isset($_POST['email']) && isset($_POST['password1']) && isset($_POST['password2'])) {
+handle_form();
+} else {
+	echo "Fill out all of the fields!";}
 display_form();
-if (isset($_GET['submit']))
-	handle_form();
 
 ?>
 </body>
@@ -59,11 +62,11 @@ function display_form(){
 
 function handle_form(){
 	$dbc = connect_to_db( "diradoor" );	
-	$firstnamevalue = isset($_GET['firstname']) ? $_GET['firstname'] : "";
-	$lastnamevalue = isset($_GET['lastname']) ? $_GET['lastname'] : "";
-	$emailvalue = isset($_GET['email']) ? $_GET['email'] : "";
-	$passwordvalue1 = isset($_GET['password1']) ? $_GET['password1'] : "";
-	$passwordvalue2 = isset($_GET['password2']) ? $_GET['password2'] : "";
+	$firstnamevalue = isset($_POST['firstname']) ? $_POST['firstname'] : "";
+	$lastnamevalue = isset($_POST['lastname']) ? $_POST['lastname'] : "";
+	$emailvalue = isset($_POST['email']) ? $_POST['email'] : "";
+	$passwordvalue1 = isset($_POST['password1']) ? $_POST['password1'] : "";
+	$passwordvalue2 = isset($_POST['password2']) ? $_POST['password2'] : "";
 	$encoded1 = sha1( $passwordvalue1 );
 	$encoded2 = sha1( $passwordvalue2 );
 	$query = "insert into signup (firstname, lastname, email, password1, password2) 
