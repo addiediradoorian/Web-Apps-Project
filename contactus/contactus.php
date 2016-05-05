@@ -10,9 +10,12 @@
 </head>
 <body>
 <?php
+if (isset($_GET['submit']) && isset($_GET['name']) && isset($_GET['email'])
+&& isset($_GET['eomments'])) {
+handle_contact_form();
+} else {
+	echo "Fill out all of the fields!";}
 display_contact_form();
-if (isset($_GET['submit'])) 
-	handle_contact_form();
 
 ?>
 </body>
